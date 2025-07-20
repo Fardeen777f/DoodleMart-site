@@ -1,0 +1,2083 @@
+:root {
+  --hd: #F0ECE3;
+  --bg: #0B1A2E;
+  --bg-alt: #132339;
+  --text-light: #ffffff;
+  --hover: #d1a76b;
+  --secondary: #1c2c46;
+  --font-body: 'Source Sans Pro', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+body, p, a, li, span, button {
+  font-family: var(--font-body);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-light);
+  padding: 0;
+  line-height: 1.6;
+}
+
+.bg-image{
+  background:
+  linear-gradient(
+    to right,
+    rgba(11,26,46,0.85) 15%, 
+    rgba(11,26,46,0.1) 100%
+  ),
+  url("./images/banner.jpg") center / cover no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  position: relative;
+  height: 110vh;
+  z-index: 1;
+}
+
+.page-wrapper{
+  padding: 0 4rem;
+}
+
+/* Navbar Menu */
+.header {
+  position: relative;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  width: 100%;
+  padding: 1.5rem;
+  border-bottom: 3.5px solid rgba(255, 255, 255, 0.133);
+  background: rgba(11, 26, 46, 0.6); 
+  backdrop-filter: blur(10px);   
+  z-index: 1;
+}
+
+.logo {
+  color: var(--hd);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+
+.nav-links li {
+  padding-inline: 0.5rem;
+}
+
+.nav-links a {
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--hd);
+  opacity: 0.85;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+  color: var(--hover);
+}
+
+.nav-icons i {
+  color: var(--bg) ;
+  opacity: 0.85;
+  padding: 1rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: var(--hd);
+}
+
+.nav-icons i:hover {
+  color: var(--hover);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(240, 236, 227,0.15);
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+/* Items inside dropdown */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.dropdown input:checked + .dropdown-label + .dropdown-menu {
+  display: block;
+}
+
+.dropdown:hover input:checked + .dropdown-label + .dropdown-menu {
+  display: block;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-link-label,
+.nav-links a {
+  color: var(--hd);
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.dropdown input[type="checkbox"] {
+  display: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f3f3f3;
+  color: #007bff;
+}
+
+.dropdown input:checked + .nav-link-label + .dropdown-menu {
+  display: block;
+}
+
+.fa-chevron-down {
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown input:checked + .nav-link-label + .dropdown-menu {
+  display: block;
+}
+
+.hero {
+  padding: 7rem 0 5rem 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+.hero p {
+  max-width: 500px;
+  opacity: 0.85;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.cta {
+  background: var(--hover);
+  color: var(--bg);
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.cta i{
+    transition: transform 0.3s;
+}
+.cta:hover i{
+    transform: translateX(0.3rem);
+}
+
+.hero-images {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  transform: scale(1);
+}
+
+.hero-images img {
+  width: 95%;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 24px rgba(240, 236, 227,0.4);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(0);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+.hero-images img:hover {
+  transform: scale(1.5);
+}
+
+button a{
+    text-decoration: none;
+    color: black;
+    column-gap: .5rem;
+    font-size: 16px;
+}
+
+.cta i {
+  margin-left: 0.5rem; 
+}
+
+/* ---------------------------Animations---------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.hero-content h1, 
+.hero-content p, 
+.hero-content .cta {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-content h1 {
+  animation-delay: 0.2s;
+}
+
+.hero-content p {
+  animation-delay: 0.4s;
+}
+
+.hero-content .cta {
+  animation-delay: 0.6s;
+}
+
+.hero-images img:nth-child(1) {
+  animation-delay: 0.4s;
+}
+
+.hero-images img:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+.hero-images img:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-icons i {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+  }
+
+  .input-style {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  #search {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .nav-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .nav-icons i {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .input-style {
+    font-size: 13px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .nav-icons i {
+    font-size: 0.8rem;
+  }
+
+  .input-style {
+    width: 100%;
+    margin: 5px auto;
+    font-size: 12px;
+  }
+}
+
+
+/* Brand Section */
+.brand-section {
+  background: linear-gradient(to right, #101f33, #1c2c46);
+  padding: 5rem 4rem;
+  text-align: center;
+}
+
+.brand-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  color: var(--hd);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  position: relative;
+}
+
+.brand-underline {
+  display: inline-block;
+  width: 80px;
+  height: 4px;
+  background-color: var(--hover);
+  margin-bottom: 3rem;
+  border-radius: 10px;
+}
+
+/* Brand Logos Grid */
+.refined-brand-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.refined-brand-strip div {
+  width: 170px;
+  height: 120px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(240, 236, 227, 0.06);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.refined-brand-strip div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(240, 236, 227, 0.15);
+}
+
+.refined-brand-strip img {
+  max-width: 140px;
+  max-height: 80px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* deals-css */
+
+
+/* deals-css */
+
+/* ADD THIS ENTIRE NEW BLOCK */
+.deal-card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.product-card {
+  width: 260px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(240, 236, 227, 0.1);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-top: 40px;    
+    margin-bottom: 40px; 
+    padding: 20px;
+    text-align: center;
+    display: flex;        
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: space-between; 
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 5px;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+  flex-grow: 1;
+}
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .product-modal {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 800px;
+      width: 95%;
+      box-shadow: 0 8px 32px rgba(240, 236, 227, 0.3);
+      position: relative;
+      z-index: 10000;
+    }
+
+    .product-modal, 
+.product-modal h2,
+.product-modal h3,
+.product-modal p,
+.product-modal label,
+.product-modal .desc,
+.modal-description,
+.modal-description p,
+.modal-comparison,
+.modal-comparison li {
+  color: #222 !important;
+}
+
+.product-modal {
+  font-family: sans-serif;
+}
+
+.product-modal h1,
+.product-modal h2,
+.product-modal h3,
+.modal-description h3,
+.modal-comparison h3 {
+  font-family: sans-serif;
+}
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2rem;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .modal-left img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    .modal-right {
+      flex: 1;
+      padding-right: 40px; 
+    }
+
+    .modal-right h2 {
+  margin-bottom: 10px;
+}
+
+    .price {
+      color: #e74c3c;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    .buttons button {
+      margin: 10px 10px 0 0;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .add {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    .buy {
+      background-color: black;
+      color: white;
+    }
+
+    .support {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .support a {
+      color: #c0392b;
+      text-decoration: none;
+    }
+
+    .modal-description-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd;
+    }
+
+    .modal-description,
+    .modal-comparison {
+      flex: 1 1 300px;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .modal-description h3,
+    .modal-comparison h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      color: #222;
+    }
+
+    .modal-comparison ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .modal-comparison ul li {
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .modal-comparison h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #222;
+  font-weight: bold;
+}
+
+.comparison-list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.comparison-list li {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ccc;
+  padding-bottom: 6px;
+}
+
+.feature-label {
+  font-weight: 600;
+  color: #444;
+}
+
+.stars {
+  color: #f5a623; 
+  font-family: monospace;
+  letter-spacing: 2px;
+}
+
+.doc-download {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.doc-download p {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.doc-download a {
+  display: inline-block;
+  margin-right: 15px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background-color: #1c2c46;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background-color 0.3s;
+}
+
+.doc-download a:hover {
+  background-color: #d1a76b;
+  color: #000;
+}
+
+.product-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(240, 236, 227, 0.15);
+    }
+    
+
+/* === Deal Cards ONLY === */
+.deal-card-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.deal-card {
+  width: 30%;
+  margin: 20px 0;
+}
+
+.deal-card img {
+  height: 220px;
+}
+
+/* Deal Card Price and Button */
+.deal-card .price {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.deal-add-btn {
+  margin-top: 10px;
+  background-color: #222;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deal-add-btn:hover {
+  background-color: #e74c3c;
+}
+
+/* items-code-start */
+.row {
+    padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(240, 236, 227,0.1);
+  width: 200px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+   width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-content h4 {
+  margin: 8px 0 4px;
+  font-size: 1em;
+  color: var(--bg);
+}
+
+.card-content p {
+  font-size: 0.85em;
+  color: #555;
+}
+
+.card-content .price {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+.card-content button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #e91e63;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.card-content button:hover {
+  background: #d81b60;
+}
+
+.hidden {
+  display: none !important;
+}
+/* items-code-end */
+
+/* contact-code-start */
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0B1A2E, #F0ECE3);
+  padding: 2rem 1rem;
+}
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    background: #0B1A2E;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px #F0ECE3;
+    overflow: hidden;
+    max-width: 1000px;
+    width: 90%;
+  }
+
+  .form-section, .map-section {
+    flex: 1 1 400px;
+    min-width: 300px;
+  }
+
+  .form-section {
+    padding: 2rem;
+    color: #fff;
+  }
+
+  .form-section h2 {
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+  }
+
+  .contact-info {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+  .form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-section input,
+  .form-section textarea {
+    padding: 0.9rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  .form-section input::placeholder,
+  .form-section textarea::placeholder {
+    color: rgba(255,255,255,0.7);
+  }
+
+  .form-section input:focus,
+  .form-section textarea:focus {
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 0 5px rgba(255,255,255,0.5);
+  }
+
+  .form-section button {
+    padding: 0.9rem;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.4);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+
+  .form-section button:hover {
+    background: rgba(255,255,255,0.6);
+    transform: translateY(-2px);
+  }
+
+  .map-section iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    border: none;
+  }
+
+  .contact-info-inline {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.contact-info-inline .address,
+.contact-info-inline .email {
+  flex: 1 1 45%;
+  min-width: 200px;
+  line-height: 1.6;
+}
+
+.contact-info-inline a {
+  color: #FFD700;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.contact-info-inline a:hover {
+  color: #fff;
+}
+
+  @media(max-width: 768px){
+    .container {
+      flex-direction: column;
+    }
+  }
+/* contact-code-end */
+
+/* footer-code-start   */
+.advanced-footer {
+      background: #0B1A2E;
+      color: #F0ECE3;
+      padding: 60px 20px 30px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer-brand {
+      text-align: left;
+    }
+
+    .footer-brand h2 {
+      color: #f5a623;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      line-height: 1.6;
+    }
+
+    .footer-links h3,
+    .footer-contact h3,
+    .footer-newsletter h3 {
+      margin-bottom: 15px;
+      color: #f5a623;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #F0ECE3;
+      margin-bottom: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .footer-links a:hover {
+      padding-left: 8px;
+      color: #f5a623;
+    }
+
+    .footer-contact p {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .footer-social a {
+      color: #F0ECE3;
+      margin-right: 12px;
+      font-size: 1.3rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: #f5a623;
+      transform: scale(1.2);
+    }
+
+    .footer-newsletter form {
+      display: flex;
+    }
+
+    .footer-newsletter input {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 3px 0 0 3px;
+      outline: none;
+      flex: 1;
+    }
+
+    .footer-newsletter button {
+      padding: 8px 14px;
+      border: none;
+      background: #f5a623;
+      color: #111;
+      border-radius: 0 3px 3px 0;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .footer-newsletter button:hover {
+      background: #ffb347;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .footer-newsletter form {
+        flex-direction: column;
+      }
+
+      .footer-newsletter input,
+      .footer-newsletter button {
+        width: 100%;
+        border-radius: 3px;
+        margin-bottom: 10px;
+      }
+    }
+
+/* footer-code-end */
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  background: linear-gradient(145deg, #132339, #1c2c46);
+  border: 2px solid #d1a76b;
+  border-radius: 50%;
+  padding: 14px 18px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease-in-out;
+}
+
+#backToTopBtn:hover {
+  background: #d1a76b;
+  color: #0b1a2e;
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(209, 167, 107, 0.5);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+/* ---------------- Hamburger Responsive Navbar --------------- */
+
+/* ... your existing CSS ... */
+
+/* Hamburger Menu Toggle */
+/* ... your existing CSS ... */
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.8rem;
+    color: var(--hd);
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* For smaller screens */
+@media (max-width: 992px) {
+    .nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        background: rgba(11, 26, 46, 0.95); /* Slightly darker background when open */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        right: 0;
+        padding: 1rem 0;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        display: none; /* Hidden by default */
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show when active */
+    }
+
+    .nav-links li {
+        padding: 0; /* Changed to 0 to control padding on inner elements */
+        width: 100%;
+    }
+
+    /* IMPORTANT CHANGE HERE: Apply specific padding to links/labels within mobile menu */
+    .nav-links a,
+    .nav-link-label {
+        padding: 0.8rem 2rem; /* Give them adequate padding for clickability */
+        width: 100%;
+        display: block; /* Ensure they take full width for padding */
+    }
+
+    .dropdown-menu {
+        position: static; /* Change to static for vertical stacking */
+        background: transparent; /* Transparent background for nested menu */
+        box-shadow: none;
+        padding: 0;
+        min-width: unset;
+        border-radius: 0;
+        margin-left: 20px; /* Indent sub-items */
+        /* Ensure it's hidden by default and controlled by JS/checkbox */
+        display: none; /* Add this line to explicitly hide by default on mobile */
+        opacity: 1; /* Make sure it's not transparent if displayed */
+        transform: translateY(0); /* Remove any transform offsets */
+        pointer-events: auto; /* Allow clicks */
+    }
+
+    /* IMPORTANT ADDITION: Control dropdown visibility on mobile based on checkbox */
+    .dropdown input:checked ~ .dropdown-menu {
+        display: block; /* Show dropdown when checkbox is checked */
+    }
+
+    .dropdown-menu li a {
+        padding: 8px 2rem 8px 3rem; /* Adjust padding for dropdown items, further indent */
+        color: var(--hd); /* Keep text color consistent with main nav links */
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: transparent; /* Remove background hover */
+        color: var(--hover);
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger on smaller screens */
+    }
+
+    .nav-icons {
+        display: none; /* Hide nav icons on smaller screens or adjust their display as needed */
+    }
+
+    /* Optional: Adjust logo margin for better alignment */
+    .logo {
+        margin-left: 0;
+    }
+}
+
+/* For even smaller screens, if needed */
+@media (max-width: 576px) {
+    .header {
+        padding: 1rem;
+    }
+}
+
+/* ----------------brand-section-responsive------------------- */
+
+/* --- Responsive Adjustments for Brands Section --- */
+
+/* For screens smaller than 992px (e.g., tablets) - Aim for 3 logos per row */
+@media (max-width: 992px) {
+    .refined-brand-strip {
+        gap: 20px; /* Adjust gap for smaller screens */
+    }
+
+    .refined-brand-strip div {
+        flex-basis: calc(33.33% - 13.33px); /* 3 items per row, accounting for gap */
+        min-width: 150px; /* Prevent shrinking too much */
+        width: auto; /* Allow flex-basis to control width */
+        height: 100px; /* Slightly smaller height for consistency */
+    }
+
+    /* Adjust image size within its container for this breakpoint */
+    .refined-brand-strip div img {
+        max-height: 70px; /* Reduce max height of image */
+        max-width: 90%; /* Allow image to take more width if needed */
+    }
+}
+
+/* For screens smaller than 768px (e.g., larger phones) - Aim for 2 logos per row */
+@media (max-width: 768px) {
+    .refined-brand-strip {
+        gap: 15px; /* Further reduce gap */
+    }
+
+    .refined-brand-strip div {
+        flex-basis: calc(50% - 7.5px); /* 2 items per row */
+        min-width: 120px; /* Prevent shrinking too much */
+        height: 90px; /* Further smaller height */
+    }
+
+    /* Adjust image size within its container for this breakpoint */
+    .refined-brand-strip div img {
+        max-height: 60px; /* Further reduce max height of image */
+        max-width: 85%; /* Adjust width */
+    }
+}
+
+/* For screens smaller than 480px (e.g., small phones) - Aim for 1 logo per row */
+@media (max-width: 480px) {
+    .brand-title {
+        font-size: 2rem; /* Adjust title size for very small screens */
+    }
+    .brand-section {
+        padding: 3rem 1rem; /* Adjust section padding */
+    }
+    .refined-brand-strip {
+        gap: 10px; /* Minimal gap */
+    }
+    .refined-brand-strip div {
+        flex-basis: 100%; /* 1 item per row, takes full width */
+        width: auto; /* Allow flex-basis to control width */
+        height: 80px; /* Consistent height */
+    }
+
+    /* Adjust image size within its container for this breakpoint */
+    .refined-brand-strip div img {
+        max-height: 50px; /* Smallest max height for image */
+        max-width: 80%; /* Adjust width */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Responsive Settings */
+@media (max-width: 992px) {
+  body {
+    font-size: 15px; /* Adjust base font size for larger tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust base font size for smaller tablets/large phones */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 13px; /* Adjust base font size for small phones */
+  }
+}
+
+
+/* 1. Navbar/Header Responsive Adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem; /* Adjust header padding */
+  }
+
+  .logo {
+    font-size: 1.8rem; /* Adjust logo size */
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger menu */
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    position: absolute;
+    top: 60px; /* Below the header */
+    left: 0;
+    width: 100%;
+    background: var(--bg-alt); /* Background for the mobile menu */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid var(--secondary);
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 1.5rem;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    max-height: 300px; /* Show menu (adjust as needed based on content) */
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-links li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid var(--secondary); /* Separator for menu items */
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links a,
+  .nav-link-label {
+    padding: 10px 0; /* Padding for menu items */
+    display: block;
+    text-align: left;
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static; /* Dropdowns stack below parent in mobile menu */
+    width: 100%;
+    background: var(--secondary); /* Different background for sub-menu */
+    box-shadow: none;
+    padding: 0;
+    max-height: 0; /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .dropdown input[type="checkbox"]:checked ~ .dropdown-menu {
+    max-height: 200px; /* Show sub-menu */
+  }
+
+  .dropdown-menu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separator for sub-menu items */
+  }
+
+  .dropdown-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .dropdown-menu a {
+    padding-left: 20px; /* Indent sub-menu items */
+    font-size: 0.95em;
+  }
+}
+
+/* 2. Hero Section Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero {
+    grid-template-columns: 1fr; /* Stack content vertically */
+    padding: 5rem 2rem; /* Adjust padding for smaller screens */
+    text-align: center; /* Center align text content */
+    row-gap: 3rem; /* Increase gap between stacked sections */
+  }
+
+  .hero-content h1 {
+    font-size: 3.2rem; /* Adjust heading size */
+    margin-bottom: 1rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem; /* Adjust paragraph size */
+    margin-left: auto; /* Center paragraph */
+    margin-right: auto; /* Center paragraph */
+    margin-bottom: 2rem;
+  }
+
+  .cta {
+    font-size: 1rem; /* Adjust button size */
+    padding: 0.8rem 2rem;
+    margin: 0 auto; /* Center button */
+    display: table; /* To allow margin auto to center it */
+  }
+
+  .hero-images {
+    grid-template-columns: repeat(2, 1fr); /* Revert to 2 columns for images on tablets */
+    grid-template-rows: auto; /* Auto rows */
+    gap: 1.5rem; /* Slightly larger gap for tablets */
+    padding: 0 1rem;
+    margin-top: 2rem; /* Add some space above images */
+  }
+
+  /* Reset specific grid placements and transforms for tablet/mobile */
+  .hero-images img:nth-child(1),
+  .hero-images img:nth-child(2),
+  .hero-images img:nth-child(3) {
+    grid-column: auto;
+    grid-row: auto;
+    aspect-ratio: 4/3; /* Uniform aspect ratio for tablet grid */
+    max-height: 250px; /* Ensure images scale down */
+    z-index: auto; /* Reset z-index */
+    transform: none; /* Remove desktop specific transforms */
+    border-radius: 1rem; /* Standard rounded corners for tablet */
+  }
+
+  .hero-images img {
+    max-width: 100%; /* Ensure images fill their grid column */
+    height: auto;
+    margin: 0 auto; /* Center images within their grid cell */
+    box-shadow: 0 8px 25px rgba(240, 236, 227, 0.4); /* Slightly less intense shadow */
+  }
+
+  .hero-images img:hover {
+    transform: translateY(-5px) scale(1.01); /* Tone down hover for tablets */
+    box-shadow: 0 10px 30px rgba(240, 236, 227, 0.5);
+    border-radius: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 4rem 1.5rem;
+    row-gap: 2.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .cta {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.8rem;
+  }
+
+  .hero-images {
+    grid-template-columns: 1fr; /* Stack images vertically on smaller phones */
+    gap: 2rem; /* Increased gap for clear separation when stacked */
+    padding: 0;
+  }
+
+  .hero-images img {
+    max-width: 80%; /* Images take up most of the width but leave some padding */
+    height: auto; /* Allow height to adjust */
+    margin: 0 auto; /* Center images */
+    box-shadow: 0 6px 20px rgba(240, 236, 227, 0.3); /* Softer shadow for mobile */
+    border-radius: 0.8rem; /* Consistent rounded corners */
+  }
+
+  .hero-images img:hover {
+    transform: none; /* No hover effect on mobile (touch devices) */
+    box-shadow: 0 6px 20px rgba(240, 236, 227, 0.3); /* Keep static shadow */
+    border-radius: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem;
+    row-gap: 1.5rem; /* Smaller gap for very constrained screens */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .cta {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .hero-images img {
+    max-width: 90%; /* Take almost full width */
+    border-radius: 0.7rem; /* Slightly smaller border-radius */
+  }
+}
+
+/* 3. Brand Section Responsive Adjustments */
+@media (max-width: 768px) {
+  .brand-title h2 {
+    font-size: 2.5rem; /* Adjust title size */
+  }
+
+  .refined-brand-strip img {
+    max-width: 120px; /* Limit logo size */
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-title h2 {
+    font-size: 2rem; /* Further adjust title size */
+  }
+
+  .refined-brand-strip {
+    gap: 20px; /* Reduce gap between logos */
+  }
+
+  .refined-brand-strip img {
+    max-width: 100px; /* Even smaller logo size */
+  }
+}
+
+
+/* 4. Deals Section Responsive Adjustments */
+@media (max-width: 768px) {
+  .deal-card-row {
+    flex-direction: column; /* Stack deal cards vertically */
+    padding: 0 10px; /* Add horizontal padding */
+  }
+
+  .product-card {
+    flex: 0 0 100%; /* Make each card take full width */
+    max-width: 400px; /* Limit max width for a single card on very wide phones/small tablets */
+    margin: 0 auto; /* Center the card when it's alone */
+    padding: 15px;
+  }
+
+  .product-card img {
+    max-height: 150px; /* Ensure image scales down */
+    margin-bottom: 10px;
+  }
+
+  .product-card h3 {
+    font-size: 1.25rem; /* Smaller heading */
+    margin-bottom: 8px;
+  }
+
+  .product-card p {
+    font-size: 0.85rem; /* Smaller description */
+    margin-bottom: 10px;
+  }
+
+  .product-card .price {
+    font-size: 1.2rem; /* Smaller price */
+    margin-bottom: 10px;
+  }
+
+  .deal-add-btn {
+    padding: 8px 15px; /* Smaller button */
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .deal-card-row {
+    padding: 0 5px; /* Even smaller horizontal padding */
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-card img {
+    max-height: 120px;
+  }
+
+  .product-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .product-card p {
+    font-size: 0.8rem;
+  }
+
+  .product-card .price {
+    font-size: 1.1rem;
+  }
+
+  .deal-add-btn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* 5. Product Cards (Items Section) Responsive Adjustments */
+@media (max-width: 1024px) {
+  .row {
+    gap: 40px; /* Slightly reduce gap, but still make room for bigger cards */
+    padding: 15px;
+  }
+
+  .card {
+    width: 220px; /* Make cards slightly wider */
+    padding: 12px;
+  }
+
+  .card img {
+    height: 190px; /* Make image slightly taller */
+  }
+
+  .card-content {
+    padding: 12px;
+  }
+
+  .card-content h4 {
+    font-size: 1.1em; /* Make heading text bigger */
+    margin: 10px 0 5px;
+  }
+
+  .card-content p {
+    font-size: 0.9em; /* Make paragraph text bigger */
+  }
+
+  .card-content .price {
+    font-size: 1.05em; /* Make price text bigger */
+    margin-top: 8px;
+  }
+
+  .card-content button {
+    padding: 9px 14px; /* Make button bigger */
+    font-size: 0.95em;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    gap: 30px; /* Further adjust gap */
+    padding: 10px;
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center stacked cards */
+  }
+
+  .card {
+    width: 280px; /* Make cards significantly wider to appear bigger */
+    max-width: 90%; /* Ensure they don't overflow on very small screens */
+    padding: 15px; /* Increase card padding */
+  }
+
+  .card img {
+    height: 220px; /* Make image even taller */
+  }
+
+  .card-content {
+    padding: 15px; /* Increase content padding */
+  }
+
+  .card-content h4 {
+    font-size: 1.3em; /* Make heading text much bigger */
+    margin: 12px 0 6px;
+  }
+
+  .card-content p {
+    font-size: 1em; /* Make paragraph text much bigger */
+  }
+
+  .card-content .price {
+    font-size: 1.2em; /* Make price text much bigger */
+    margin-top: 10px;
+  }
+
+  .card-content button {
+    padding: 10px 16px; /* Make button much bigger */
+    font-size: 1em;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    gap: 20px; /* Smaller gap for very constrained screens */
+    padding: 5px;
+  }
+
+  .card {
+    width: 95%; /* Make card take almost full width */
+    padding: 18px; /* Even more padding for card */
+  }
+
+  .card img {
+    height: 250px; /* Maximize image height */
+  }
+
+  .card-content h4 {
+    font-size: 1.4em; /* Maximize heading font size */
+    margin: 15px 0 8px;
+  }
+
+  .card-content p {
+    font-size: 1.1em; /* Maximize paragraph font size */
+  }
+
+  .card-content .price {
+    font-size: 1.3em; /* Maximize price font size */
+    margin-top: 12px;
+  }
+
+  .card-content button {
+    padding: 12px 20px; /* Maximize button size */
+    font-size: 1.1em;
+    margin-top: 18px;
+  }
+}
+
+/* 6. Product Modal Responsive Adjustments */
+@media (max-width: 768px) {
+  .product-modal {
+    padding: 1rem;
+    max-width: 95%; /* Allow modal to take up more width on smaller screens */
+    margin: 20px; /* Add some margin around the modal */
+  }
+
+  .close-btn {
+    font-size: 1.5rem; /* Smaller close button */
+    top: 10px;
+    right: 15px;
+  }
+
+  .modal-content {
+    flex-direction: column; /* Stack image and details vertically */
+    gap: 1.5rem;
+  }
+
+  .modal-left img {
+    width: 100%; /* Make image full width of its container */
+    max-width: 250px; /* Limit max width of image for better scaling */
+    height: auto;
+    margin: 0 auto; /* Center the image */
+    display: block; /* Ensure centering works */
+  }
+
+  .modal-right {
+    padding-right: 0; /* Remove right padding for full width */
+    text-align: center; /* Center align text in modal-right */
+  }
+
+  .modal-right h2 {
+    font-size: 1.8rem; /* Adjust heading size */
+  }
+
+  .price {
+    font-size: 1.2rem; /* Adjust price font size */
+  }
+
+  .buttons {
+    display: flex; /* Arrange buttons side-by-side if space allows */
+    justify-content: center; /* Center the buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap if screen is very small */
+  }
+
+  .buttons button {
+    width: auto; /* Allow buttons to size naturally */
+    flex-grow: 1; /* Allow buttons to grow to fill space */
+    margin: 8px 5px; /* Adjust margin for buttons */
+    padding: 10px 15px; /* Adjust padding for buttons */
+    font-size: 0.95rem;
+  }
+
+  .modal-description-wrapper {
+    flex-direction: column; /* Stack description and comparison vertically */
+    gap: 1.5rem;
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .modal-description,
+  .modal-comparison {
+    flex: 1 1 100%; /* Make each section take full width */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .modal-description h3,
+  .modal-comparison h3 {
+    font-size: 1.2rem; /* Adjust sub-heading size */
+    text-align: center; /* Center sub-headings */
+    margin-bottom: 0.5rem;
+  }
+
+  .comparison-list li {
+    font-size: 0.9rem; /* Adjust comparison list item font size */
+    padding-bottom: 4px; /* Adjust padding */
+  }
+
+  .doc-download {
+    text-align: center; /* Center download buttons */
+  }
+
+  .doc-download a {
+    margin: 5px; /* Adjust margin for download links */
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-modal {
+    padding: 0.8rem;
+    margin: 10px;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+    top: 8px;
+    right: 10px;
+  }
+
+  .modal-left img {
+    max-width: 200px; /* Further reduce max-width for very small screens */
+  }
+
+  .modal-right h2 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .price {
+    font-size: 1.1rem; /* Smaller price */
+  }
+
+  .buttons button {
+    font-size: 0.85rem; /* Smaller buttons */
+    padding: 8px 12px;
+  }
+
+  .support {
+    font-size: 0.8rem; /* Smaller support text */
+  }
+
+  .modal-description h3,
+  .modal-comparison h3 {
+    font-size: 1.1rem; /* Even smaller sub-headings */
+  }
+
+  .modal-description p,
+  .comparison-list li {
+    font-size: 0.85rem; /* Even smaller text */
+  }
+}
+
+/* 7. Contact Page Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 1.5rem 0.5rem; /* Adjust padding for the whole page */
+  }
+
+  .container {
+    width: 98%; /* Allow container to take more width */
+    margin: 0 auto; /* Center the container */
+    flex-direction: column; /* Already set, but good to confirm */
+  }
+
+  .form-section {
+    padding: 1.5rem; /* Adjust padding inside the form section */
+  }
+
+  .form-section h2 {
+    font-size: 1.8rem; /* Adjust heading size */
+    margin-bottom: 1rem;
+  }
+
+  .contact-info-inline {
+    flex-direction: column; /* Stack address and email vertically */
+    gap: 1rem; /* Adjust gap between stacked items */
+    margin-bottom: 1rem;
+  }
+
+  .contact-info-inline .address,
+  .contact-info-inline .email {
+    flex: 1 1 100%; /* Make them take full width */
+    min-width: unset; /* Remove min-width constraint */
+    text-align: center; /* Center align text */
+  }
+
+  .form-section input,
+  .form-section textarea,
+  .form-section button {
+    padding: 0.8rem; /* Adjust padding for form elements */
+    font-size: 0.95rem; /* Adjust font size for form elements */
+  }
+
+  .map-section iframe {
+    min-height: 250px; /* Reduced for mid-size mobile screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 1rem 0; /* Minimal padding for very small screens */
+  }
+
+  .form-section {
+    padding: 1rem; /* Further reduce padding */
+  }
+
+  .form-section h2 {
+    font-size: 1.6rem; /* Further reduce heading size */
+  }
+
+  .contact-info-inline {
+    gap: 0.8rem; /* Smaller gap */
+  }
+
+  .contact-info-inline .address,
+  .contact-info-inline .email {
+    font-size: 0.9rem; /* Smaller contact info text */
+  }
+
+  .form-section input,
+  .form-section textarea,
+  .form-section button {
+    padding: 0.7rem; /* Even smaller padding for form elements */
+    font-size: 0.9rem; /* Even smaller font size */
+  }
+
+  .map-section iframe {
+    min-height: 200px; /* Further reduce map height for very small screens */
+  }
+}
+
+/* 8. Footer Responsive Adjustments */
+/* Footer Responsive Adjustments */
+@media (max-width: 768px) {
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem; /* space between each section */
+  }
+
+  .footer-logo,
+  .footer-description,
+  .footer-links,
+  .footer-developer {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin: 0.5rem 0;
+  }
+
+  .footer-developer a {
+    color: #ff4081;
+    text-decoration: none;
+    word-break: break-word;
+  }
+
+  .footer-developer p {
+    margin: 0.3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .footer-logo h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-description,
+  .footer-links,
+  .footer-developer {
+    padding: 0 0.5rem;
+    max-width: 95%;
+  }
+
+  .footer-links li {
+    font-size: 0.95rem;
+  }
+
+  .footer-developer p,
+  .footer-developer a {
+    font-size: 0.85rem;
+  }
+}
