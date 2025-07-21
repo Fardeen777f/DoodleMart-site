@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoodleMart</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div class="bg-image">
+    <!-- Header -->
+    <header class="header">    
+        
+      <nav class="nav">
+  <a href="#" class="logo">DoodleMart</a>
+
+  <!-- Hamburger menu -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#deals">Shop</a></li>
+
+    <li class="dropdown">
+      <input type="checkbox" id="products-toggle" hidden>
+      <label for="products-toggle" class="nav-link-label">Products <i class="fa-solid fa-chevron-down"></i></label>
+      <ul class="dropdown-menu">
+        <li><a href="#" data-category="all">All</a></li>
+        <li><a href="#" data-category="pencils">Pencils</a></li>
+        <li><a href="#" data-category="pens">Pens</a></li>
+        <li><a href="#" data-category="markers">Markers</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <input type="checkbox" id="brands-toggle" hidden>
+      <label for="brands-toggle" class="nav-link-label">Brands <i class="fa-solid fa-chevron-down"></i></label>
+      <ul class="dropdown-menu">
+        <li><a href="#" data-brand="dollar">Dollar</a></li>
+        <li><a href="#" data-brand="picasso">Picasso</a></li>
+        <li><a href="#" data-brand="pelikan">Pelikan</a></li>
+        <li><a href="#" data-brand="dux">Dux</a></li>
+        <li><a href="#" data-brand="fabercastell">Faber-Castell</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#deals">Deals</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <div class="nav-icons">
+    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-shopping-cart"></i>
+  </div>
+</nav>
+
+
+    </header>
+
+    <!-- Hero -->
+    <div class="page-wrapper">
+      <section class="hero">
+        <div class="hero-content" style="border-right: 3px solid rgba(255, 255, 255, 0.195);">
+          <h1>Your Trusted<br>Source for Quality<br>Stationery</h1>
+          <p>Discover the finest stationery essentials for every need and spark your creativity with our premium range of pens, papers, and more.</p>
+          <button class="cta button"><a href="#deals">Shop Now<i class="fa-solid fa-arrow-right"></i></a></button>
+        </div>
+        <div class="hero-images">
+          <img src="./images/product.jpg" alt="Product" />
+          <img src="./images/product2.jpg" alt="Product" />
+          <img src="./images/product3.jpg" alt="Product" />
+        </div>
+      </section>
+    </div>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brand-section">
+      <h2 class="brand-title">Our Trusted Brands</h2>
+      <span class="brand-underline"></span>
+      <div class="refined-brand-strip">
+        <div><img src="images/Pelikan_logo.png" alt="Pelikan"></div>
+        <div><img src="images/Dux_logo.png" alt="Dux"></div>
+        <div><img src="images/Dollar_Logo.png" alt="Dollar"></div>
+        <div><img src="images/Fabercastell_logo.png" alt="Faber-Castell"></div>
+        <div><img src="images/Picasso_logo.png" alt="Picasso"></div>
+      </div>
+    </section>
+
+    <!-- Deals Section -->
+<section id="deals" style="padding: 50px 4rem;">
+  <p style="color: honeydew; font-size: 1.1rem; font-weight: 600; margin-bottom: 30px;">Explore Our Deals</p>
+
+
+<div class="deal-card-row">
+  <!-- Deal-Product Card 1 -->
+  <div class="product-card deal-card" onclick="openModal('modalOverlay1')">
+    <img src="images/deal_1.png" alt="Acrylic Paints" />
+    <h3>Fine Arts Arylic Painting Super Deal</h3>
+    <p>Premium acrylic paints for fine art lovers</p>
+
+  <div class="price">Rs. 6,950</div>
+  <button class="deal-add-btn">Add To Cart</button>
+  </div>
+
+
+  <!-- Modal 1 -->
+  <div class="modal-overlay" id="modalOverlay1" onclick="overlayClick(event, 'modalOverlay1', 'productModal1')">
+    <div class="product-modal" id="productModal1">
+      <span class="close-btn" onclick="closeModal('modalOverlay1')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="images/deal_1.png" alt="Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Fine Arts Arylic Painting Super Deal No. 1</h2>
+          <p class="price">Rs. 6,950</p>
+          <p class="desc">Premium acrylic paints for fine art lovers.</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            This deal includes a rich assortment of high-quality acrylic paints, brushes, canvases, and accessories, providing everything you need to create vibrant and textured artworks. 
+<br>
+Includes high-quality acrylic paints,
+Variety of brushes and canvases,
+Ideal for artists of all levels,
+Provides vibrant colors and textured finishes.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/deal_1.docx" download class="download-btn">Download Details</a>
+</div>
+
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Paint Quality:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deal-Product Card 2 -->
+  <div class="product-card deal-card" onclick="openModal('modalOverlay2')">
+    <img src="images/deal_2.png" alt="Acrylic Paints 2" />
+    <h3>Water Color Painting Deal</h3>
+    <p>Smooth, vibrant watercolors for creative painting</p>
+
+    <div class="price">Rs. 2,900</div>
+  <button class="deal-add-btn">Add To Cart</button>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal-overlay" id="modalOverlay2" onclick="overlayClick(event, 'modalOverlay2', 'productModal2')">
+    <div class="product-modal" id="productModal2">
+      <span class="close-btn" onclick="closeModal('modalOverlay2')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="images/deal_2.png" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Water Color Painting Deal No. 2</h2>
+          <p class="price">Rs. 2,900</p>
+          <p class="desc">Smooth, vibrant watercolors for creative painting.</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            This comprehensive set includes everything you need to create stunning watercolor artworks.<br>
+Includes high-quality paints and brushes,
+Premium watercolor paper included,
+Ideal for beginners and experienced artists.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/deal_2.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Paint Quality:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★★</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deal-Product Card 3 -->
+  <div class="product-card deal-card"  onclick="openModal('modalOverlay3')">
+    <img src="images/deal_3.png" alt="Acrylic Paints 2" />
+    <h3>Kids Poster Color Deal</h3>
+    <p>Vibrant poster colors for kids.</p>
+
+  <div class="price">Rs. 3,500</div>
+  <button class="deal-add-btn">Add To Cart</button>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal-overlay" id="modalOverlay3" onclick="overlayClick(event, 'modalOverlay3', 'productModal3')">
+    <div class="product-modal" id="productModal3">
+      <span class="close-btn" onclick="closeModal('modalOverlay3')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="images/deal_3.png" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Kids Poster Color Deal No. 9</h2>
+          <p class="price">Rs. 3,500</p>
+          <p class="desc">Vibrant poster colors for kids.</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Unleash your child's creativity with Deal No. 9. Each color is easy to blend, non-toxic, and safe for kids, ensuring hours of fun and creative play. <br>
+
+Vibrant, bold hues
+Easy to blend
+Non-toxic and safe for kids
+Ideal for school projects and crafts
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/deal_3.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Paint Quality:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- Our Products Section -->
+ <section id="products" style="padding: 50px 4rem;">
+<p style="color: honeydew; font-size: 1.1rem; font-weight: 600; margin-bottom: 30px;">Our Featured Products</p>
+  <!-- Product Section with Modals using new .card layout -->
+<div class="row">
+  <!-- Product 1 -->
+  <div class="card pens dux" onclick="openModal('modalOverlay4')">
+    <img src="Brand_Product images/Dux/Dux_pen.jpg" alt="Product 1" />
+    <div class="card-content">
+      <h4>Dux Gel Pen Office Pack of 12pcs</h4>
+      <p>Dux</p>
+      <div class="price">Rs. 70</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <!--Product - Modal 1 -->
+
+  <div class="modal-overlay" id="modalOverlay4" onclick="overlayClick(event, 'modalOverlay4', 'productModal4')">
+    <div class="product-modal" id="productModal4">
+      <span class="close-btn" onclick="closeModal('modalOverlay4')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Dux/Dux_pen.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Dux Gel Pen Office Pack of 12pcs</h2>
+          <p class="price">Rs. 70</p>
+          <p class="desc">Dux</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            The Dux Gel Pen delivers ultra-smooth, smudge-free writing with rich, bold ink.
+Its ergonomic grip ensures comfortable handling during long writing sessions.<br>
+Perfect for school, office, or creative work with reliable ink flow every time.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/dux_pen.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Product 2 -->
+  <div class="card pens fabercastell" onclick="openModal('modalOverlay5')">
+    <img src="Brand_Product images/FaberCastell/FaberCastell_pen.jpg" alt="Product 2" />
+    <div class="card-content">
+      <h4>Faber-Castell Mechanical Pen</h4>
+      <p>Faber-Castell</p>
+      <div class="price">Rs. 1,750</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+    <!--Product - Modal 2 -->
+
+  <div class="modal-overlay" id="modalOverlay5" onclick="overlayClick(event, 'modalOverlay5', 'productModal5')">
+    <div class="product-modal" id="productModal5">
+      <span class="close-btn" onclick="closeModal('modalOverlay5')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/FaberCastell/FaberCastell_pen.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Faber-Castell Mechanical Pencil</h2>
+          <p class="price">Rs. 1,750</p>
+          <p class="desc">Faber-Castell</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            The Faber-Castell Mechanical Pen combines precision with elegant design.
+Its fine tip ensures accurate, consistent lines ideal for technical drawing or writing.<br>
+Crafted for durability and comfort, it's a reliable tool for professionals and students alike.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Faber-Castell_pen.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Product 3 -->
+  <div class="card pens pelikan" onclick="openModal('modalOverlay6')">
+    <img src="Brand_Product images/Pelikan/Pelikan_pen.webp" alt="Product 3" />
+    <div class="card-content">
+      <h4>Pelikan Soft Gel Pen Pack of 12pcs</h4>
+      <p>Pelikan</p>
+      <div class="price">Rs. 120</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 3 -->
+<div class="modal-overlay" id="modalOverlay6" onclick="overlayClick(event, 'modalOverlay6', 'productModal6')">
+    <div class="product-modal" id="productModal6">
+      <span class="close-btn" onclick="closeModal('modalOverlay6')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Pelikan/Pelikan_pen.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Pelikan Soft Gel Pen Pack of 12pcs</h2>
+          <p class="price">Rs. 120</p>
+          <p class="desc">Pelikan</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            The Pelikan Soft Gel Pen offers an ultra-smooth writing experience with vibrant ink flow.
+Its soft grip provides exceptional comfort for long writing sessions.<br>
+Ideal for both everyday use and detailed note-taking.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Pelikan_pen.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- Product 4 -->
+  <div class="card pens picasso" onclick="openModal('modalOverlay7')">
+    <img src="Brand_Product images/Picasso/Picasso_pen.jpg" alt="Product 3" />
+    <div class="card-content">
+      <h4>Picasso Grip Ball Point Pen - Pack of 10</h4>
+      <p>Picasso</p>
+      <div class="price">Rs. 210</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 4 -->
+<div class="modal-overlay" id="modalOverlay7" onclick="overlayClick(event, 'modalOverlay7', 'productModal7')">
+    <div class="product-modal" id="productModal7">
+      <span class="close-btn" onclick="closeModal('modalOverlay7')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Picasso/Picasso_pen.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Picasso Grip Ball Point Pen - Pack of 10</h2>
+          <p class="price">Rs. 210</p>
+          <p class="desc">Picasso</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            The Picasso Grip Ball Point Pen combines elegance with functionality.
+It features a contoured grip for comfortable writing and smooth ink flow.<br>
+Perfect for professional use and everyday tasks.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Picasso_pen.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+ <!-- Product 5 -->
+  <div class="card pens dollar" onclick="openModal('modalOverlay8')">
+    <img src="Brand_Product images/Dollar/Dollar_pen.webp" alt="Product 3" />
+    <div class="card-content">
+      <h4>Dollar Ball Pen Jetflow - Black (pack of 12)</h4>
+      <p>Dollar</p>
+      <div class="price">Rs. 640</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 5 -->
+<div class="modal-overlay" id="modalOverlay8" onclick="overlayClick(event, 'modalOverlay8', 'productModal8')">
+    <div class="product-modal" id="productModal8">
+      <span class="close-btn" onclick="closeModal('modalOverlay8')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Dollar/Dollar_pen.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Dollar Ball Pen Jetflow - Black (pack of 12)</h2>
+          <p class="price">Rs. 640</p>
+          <p class="desc">Dollar</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            This pen offers a smooth, effortless writing experience with quick-drying ink—no smudges, no hassle. <br>Featuring a lightweight design and reliable performance, it's perfect for daily use at school, home, or work.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Dollar_pen.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★☆☆☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal -->
+    
+<!-- Product-second-row -->
+  <!-- Product 6 -->
+  <div class="card pencils dux" onclick="openModal('modalOverlay9')">
+    <img src="Brand_Product images/Dux/Dux_pencil.webp" alt="Product 1" />
+    <div class="card-content">
+      <h4>Dux Pencil Superb Writer Box Pack (12 pcs)</h4>
+      <p>Dux</p>
+      <div class="price">Rs. 260</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <!--Product - Modal 6 -->
+
+  <div class="modal-overlay" id="modalOverlay9" onclick="overlayClick(event, 'modalOverlay9', 'productModal9')">
+    <div class="product-modal" id="productModal9">
+      <span class="close-btn" onclick="closeModal('modalOverlay9')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Dux/Dux_pencil.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Dux Pencil Superb Writer Box Pack (12 pcs)</h2>
+          <p class="price">Rs. 260</p>
+          <p class="desc">Dux</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            These premium wood pencils deliver consistent, smooth graphite strokes with easy sharpening and minimal breakage—perfect for everyday writing or sketching. <br>Designed for comfort and durability, they’re an ideal companion for students and professionals alike.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Dux_pencil.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★★</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Product 7 -->
+  <div class="card pencils fabercastell" onclick="openModal('modalOverlay10')">
+    <img src="Brand_Product images/FaberCastell/FaberCastell_pencil.jpg" alt="Product 2" />
+    <div class="card-content">
+      <h4>Faber Castell Lead Pencil Pack Of 12</h4>
+      <p>Faber-Castell</p>
+      <div class="price">Rs. 480</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+    <!--Product - Modal 7 -->
+
+  <div class="modal-overlay" id="modalOverlay10" onclick="overlayClick(event, 'modalOverlay10', 'productModal10')">
+    <div class="product-modal" id="productModal10">
+      <span class="close-btn" onclick="closeModal('modalOverlay10')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/FaberCastell/FaberCastell_pencil.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Faber Castell Lead Pencil Pack Of 12</h2>
+          <p class="price">Rs. 480</p>
+          <p class="desc">Faber-Castell</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Crafted by the renowned Faber‑Castell brand, these pencils feature high-quality HB leads that provide clean, reliable strokes—perfect for writing, drawing, or sketching.<br>
+Their durable cedar wood casing sharpens evenly and resists breakage, making them a versatile, long‑lasting tool for both students and artists.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Faber-Castell_pencil.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★☆☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Product 8 -->
+  <div class="card pencils pelikan" onclick="openModal('modalOverlay11')">
+    <img src="Brand_Product images/Pelikan/Pelikan_pencil.webp" alt="Product 3" />
+    <div class="card-content">
+      <h4>Pelikan Hb Pencils 12s With Eraser</h4>
+      <p>Pelikan</p>
+      <div class="price">Rs. 575</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 8 -->
+<div class="modal-overlay" id="modalOverlay11" onclick="overlayClick(event, 'modalOverlay11', 'productModal11')">
+    <div class="product-modal" id="productModal11">
+      <span class="close-btn" onclick="closeModal('modalOverlay11')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Pelikan/Pelikan_pencil.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Pelikan Hb Pencils 12s With Eraser</h2>
+          <p class="price">Rs. 575</p>
+          <p class="desc">Pelikan</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Premium-quality HB graphite cores deliver smooth, consistent lines ideal for writing, drafting, and shading.<br>
+Encased in durable, finely-grained wood, these pencils are easy to sharpen cleanly and built to last—perfect for students, artists, and professionals alike.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Pelikan_pencil.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★☆☆☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★☆☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- Product 9 -->
+  <div class="card pencils picasso" onclick="openModal('modalOverlay12')">
+    <img src="Brand_Product images/Picasso/Picasso_pencil.jpg" alt="Product 3" />
+    <div class="card-content">
+      <h4>Picasso Pencil Executive Pack of 12</h4>
+      <p>Picasso</p>
+      <div class="price">Rs. 299</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 9 -->
+<div class="modal-overlay" id="modalOverlay12" onclick="overlayClick(event, 'modalOverlay12', 'productModal12')">
+    <div class="product-modal" id="productModal12">
+      <span class="close-btn" onclick="closeModal('modalOverlay12')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Picasso/Picasso_pencil.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Picasso Pencil Executive Pack of 12</h2>
+          <p class="price">Rs. 299</p>
+          <p class="desc">Picasso</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Smooth HB graphite provides crisp, clean lines ideal for writing, sketching, and note-taking.<br>
+Crafted with quality wood for easy sharpening, these colorful pencils bring both performance and fun to creative tasks.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Picasso_pencil.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+ <!-- Product 10 -->
+  <div class="card pencils dollar" onclick="openModal('modalOverlay13')">
+    <img src="Brand_Product images/Dollar/Dollar_pencil.webp" alt="Product 3" />
+    <div class="card-content">
+      <h4>Dollar my Pencil 2HB 12 Pieces/Box - Blue</h4>
+      <p>Dollar</p>
+      <div class="price">Rs. 335</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 10 -->
+<div class="modal-overlay" id="modalOverlay13" onclick="overlayClick(event, 'modalOverlay13', 'productModal13')">
+    <div class="product-modal" id="productModal13">
+      <span class="close-btn" onclick="closeModal('modalOverlay13')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Dollar/Dollar_pencil.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Dollar my Pencil 2HB 12 Pieces/Box - Blue</h2>
+          <p class="price">Rs. 335</p>
+          <p class="desc">Dollar</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Durable 2HB graphite ensures smooth, consistent writing and clean erasures—great for both writing and drawing.<br>
+Vibrant blue design adds a fun, energetic touch to an everyday essential.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Dollar_pencil.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★☆☆☆☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★☆☆☆☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!-- Product-third-row -->
+  <!-- Product 11 -->
+  <div class="card markers dux" onclick="openModal('modalOverlay14')">
+    <img src="Brand_Product images/Dux/Dux_colormarker.webp" alt="Product 1" />
+    <div class="card-content">
+      <h4>Dux Color Markers - 10 Markers</h4>
+      <p>Dux</p>
+      <div class="price">Rs. 199</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+  <!--Product - Modal 11 -->
+
+  <div class="modal-overlay" id="modalOverlay14" onclick="overlayClick(event, 'modalOverlay14', 'productModal14')">
+    <div class="product-modal" id="productModal14">
+      <span class="close-btn" onclick="closeModal('modalOverlay14')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Dux/Dux_colormarker.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Dux Color Markers - 10 Markers</h2>
+          <p class="price">Rs. 199</p>
+          <p class="desc">Dux</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Bright, smooth-flow markers with bold, vivid pigments—perfect for sketching, coloring, and visual note-taking.<br>
+Ergonomic barrel design ensures comfortable grip for both kids and adults during extended creative sessions.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Dux_marker.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★☆☆☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★☆☆☆☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Product 12 -->
+  <div class="card markers fabercastell" onclick="openModal('modalOverlay15')">
+    <img src="Brand_Product images/FaberCastell/FaberCastell_colormarker.jpg" alt="Product 2" />
+    <div class="card-content">
+      <h4>Faber-Castell DuoTip Washable Markers - 12 Markers</h4>
+      <p>Faber-Castell</p>
+      <div class="price">Rs. 999</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+    <!--Product - Modal 12 -->
+
+  <div class="modal-overlay" id="modalOverlay15" onclick="overlayClick(event, 'modalOverlay15', 'productModal15')">
+    <div class="product-modal" id="productModal15">
+      <span class="close-btn" onclick="closeModal('modalOverlay15')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/FaberCastell/FaberCastell_colormarker.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Faber-Castell DuoTip Washable Markers - 12 Markers</h2>
+          <p class="price">Rs. 999</p>
+          <p class="desc">Faber-Castell</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Non-toxic, acid-free ink with ventilated safety caps to prevent choking; perfect for creative projects thanks to both broad and fine strokes. 
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Faber-Castell_marker.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★★</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Product 13 -->
+  <div class="card markers pelikan" onclick="openModal('modalOverlay16')">
+    <img src="Brand_Product images/Pelikan/Pelikan_colormarker.webp" alt="Product 3" />
+    <div class="card-content">
+      <h4>Pelikan Color Markers Colorella Star Triangular 12pcs</h4>
+      <p>Pelikan</p>
+      <div class="price">Rs. 950</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 13 -->
+<div class="modal-overlay" id="modalOverlay16" onclick="overlayClick(event, 'modalOverlay16', 'productModal16')">
+    <div class="product-modal" id="productModal16">
+      <span class="close-btn" onclick="closeModal('modalOverlay16')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Pelikan/Pelikan_colormarker.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Pelikan Color Markers Colorella Star Triangular 12pcs</h2>
+          <p class="price">Rs. 950</p>
+          <p class="desc">Pelikan</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Set of 12 triangular, ergonomic color markers with vibrant, quick-drying, water-based ink—perfect for drawing and note-taking.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Pelikan_marker.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+        <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★☆☆☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★☆☆☆</span></li>
+  </ul>
+</div>
+      </div>
+    </div>
+  </div>
+
+
+
+   <!-- Product 14 -->
+  <div class="card markers picasso" onclick="openModal('modalOverlay17')">
+    <img src="Brand_Product images/Picasso/Picasso_colormarker.jpg" alt="Product 3" />
+    <div class="card-content">
+      <h4>Picasso Color Markers 12pcs</h4>
+      <p>Picasso</p>
+      <div class="price">Rs. 399</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 14 -->
+<div class="modal-overlay" id="modalOverlay17" onclick="overlayClick(event, 'modalOverlay17', 'productModal17')">
+    <div class="product-modal" id="productModal17">
+      <span class="close-btn" onclick="closeModal('modalOverlay17')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Picasso/Picasso_colormarker.jpg" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Picasso Color Markers 12pcs</h2>
+          <p class="price">Rs. 399</p>
+          <p class="desc">Picasso</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            Non-toxic and easy to wash, these markers boast durable design and bold tones—great for artists of all ages.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Picasso_marker.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+            <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★★</span></li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+ <!-- Product 15 -->
+  <div class="card markers dollar" onclick="openModal('modalOverlay18')">
+    <img src="Brand_Product images/Dollar/Dollar_colormarker.webp" alt="Product 3" />
+    <div class="card-content">
+      <h4>Dollar Color Markers Regular pack set of 10 Pcs</h4>
+      <p>Dollar</p>
+      <div class="price">Rs. 170</div>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!--Product - Modal 15 -->
+<div class="modal-overlay" id="modalOverlay18" onclick="overlayClick(event, 'modalOverlay18', 'productModal18')">
+    <div class="product-modal" id="productModal18">
+      <span class="close-btn" onclick="closeModal('modalOverlay18')">&times;</span>
+      <div class="modal-content">
+        <div class="modal-left">
+          <img src="Brand_Product images/Dollar/Dollar_colormarker.webp" alt="GlowMax Paints" />
+        </div>
+        <div class="modal-right">
+          <h2>Dollar Color Markers Regular pack set of 10 Pcs</h2>
+          <p class="price">Rs. 170</p>
+          <p class="desc">Dollar</p>
+          <div class="qty">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" value="1" min="1" />
+          </div>
+          <div class="buttons">
+            <button class="add">Add to Cart</button>
+            <button class="buy">Buy Now</button>
+          </div>
+          <p class="support">
+            📞 Need help? <a href="tel:03111222295">03111222295</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-description-wrapper">
+        <div class="modal-description">
+          <h3>Description</h3>
+          <p>
+            A versatile set of 10 vivid markers with water-based ink, perfect for drawing, journaling, and artistic expression.
+          </p>
+          <div class="doc-download">
+  <p><strong>Full details</strong></p>
+  <a href="docs/Dollar_marker.docx" download class="download-btn">Download Details</a>
+</div>
+        </div>
+       <div class="modal-comparison">
+  <h3>Compare Product Features</h3>
+  <ul class="comparison-list">
+    <li><span class="feature-label">Ink/Lead Quality:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Durability:</span> <span class="stars">★★★★☆</span></li>
+    <li><span class="feature-label">Grip Comfort:</span> <span class="stars">★★★☆☆</span></li>
+    <li><span class="feature-label">Design & Aesthetics:</span> <span class="stars">★★★★★</span></li>
+    <li><span class="feature-label">Value for Money:</span> <span class="stars">★★★★☆</span></li>
+  </ul>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<div class="contact-page" id="contact">
+  <div class="container">
+    <div class="form-section">
+      <h2>Contact Us</h2>
+      
+      <div class="contact-info-inline">
+  <div class="address">
+    <strong>Address:</strong><br>
+    123 Stationery Lane,<br>
+    Paper Town, PK 12345
+  </div>
+  <div class="email">
+    <strong>Email:</strong><br>
+    <a href="mailto:contact@doodlemart.com">contact@doodlemart.com</a>
+  </div>
+</div>
+
+      <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="map-section">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2236421989994!2d-122.42177678468352!3d37.7749297797587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818f9b5cda87%3A0xa0f501ebf6b5e96e!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1625483745353!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+  </div>
+
+    <footer class="advanced-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>DoodleMart</h2>
+        <p>Unleash your creativity with our exclusive doodle designs and artistic collections.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#brands">Brands</a>
+        <a href="#deals">Deals</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: info@doodlemart.com</p>
+        <p>Phone: +92 311 1222295</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>Subscribe</h3>
+        <form>
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 DoodleMart. All rights reserved.</p>
+    </div>
+  </footer>
+
+<button onclick="scrollToTop()" id="backToTopBtn" title="Go to top"><i class="fa-solid fa-angle-up"></i></button>
+
+
+<script>
+  // Show the button when scrolled down 300px
+  window.onscroll = function () {
+    const btn = document.getElementById("backToTopBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      btn.style.display = "block";
+    } else {
+      btn.style.display = "none";
+    }
+  };
+
+  // Scroll smoothly to top
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+  <script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  function overlayClick(e, overlayId, modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal.contains(e.target)) {
+      closeModal(overlayId);
+    }
+  }
+</script>
+
+<script>
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.dropdown input[type="checkbox"]').forEach((checkbox) => {
+      const dropdown = checkbox.closest('.dropdown');
+      if (!dropdown.contains(e.target)) {
+        checkbox.checked = false;
+      }
+    });
+  });
+</script>
+
+<script>
+  const cards = document.querySelectorAll('.card');
+  const productSection = document.getElementById('products');
+
+  function showAllCards() {
+    cards.forEach(card => card.classList.remove('hidden'));
+  }
+
+  document.querySelectorAll('.dropdown-menu a[data-category]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const category = this.getAttribute('data-category');
+
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      productSection?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  document.querySelectorAll('.dropdown-menu a[data-brand]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const brand = this.getAttribute('data-brand');
+
+      cards.forEach(card => {
+        if (brand === 'all' || card.classList.contains(brand)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      productSection?.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+  }
+</script>
+
+
+
+
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+  }
+
+  document.addEventListener('click', function(event) {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+      const checkbox = dropdown.querySelector('input[type="checkbox"]');
+      if (checkbox && !dropdown.contains(event.target)) {
+        checkbox.checked = false;
+      }
+    });
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const navLinks = document.querySelector('.nav-links');
+      if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+      }
+    });
+  });
+</script>
+
+<script>
+    // Function to toggle the main mobile menu
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+        // Close any open dropdowns when the main menu is toggled
+        document.querySelectorAll('.dropdown input[type="checkbox"]').forEach(checkbox => {
+            checkbox.checked = false;
+        });
+    }
+
+    // Handle dropdown toggling when a label is clicked
+    document.querySelectorAll('.nav-link-label').forEach(label => {
+        label.addEventListener('click', function(event) {
+            const checkbox = this.previousElementSibling; 
+            if (checkbox && checkbox.type === 'checkbox') {
+                checkbox.checked = !checkbox.checked; 
+            }
+            event.preventDefault(); 
+            event.stopPropagation(); 
+        });
+    });
+
+    document.addEventListener('click', function(event) {
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(dropdown => {
+            const checkbox = dropdown.querySelector('input[type="checkbox"]');
+            if (checkbox && !dropdown.contains(event.target)) {
+                checkbox.checked = false; // Uncheck if click is outside the dropdown
+            }
+        });
+    });
+
+    document.querySelectorAll('.nav-links > li > a:not(.nav-link-label)').forEach(link => {
+        link.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                // Also close any open dropdowns
+                document.querySelectorAll('.dropdown input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            }
+        });
+    });
+
+    document.querySelectorAll('.dropdown-menu a').forEach(subLink => {
+        subLink.addEventListener('click', () => {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                // Also close any open dropdowns
+                document.querySelectorAll('.dropdown input[type="checkbox"]').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>
